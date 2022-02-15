@@ -38,7 +38,7 @@ namespace CommandLauncher.Controllers
 
         public async Task<IActionResult> Launch(string Command)
         {
-            var fileName = "C:/VincentTheGenius/afficher.txt";
+            var fileName = "C:/VincentTheGenius/afficher2.txt";
 
             await System.IO.File.WriteAllTextAsync(fileName, Command);
 
