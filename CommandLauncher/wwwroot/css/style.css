@@ -12,7 +12,7 @@ h1, h2 {
 }
 
 .input {
-    width: 50%;
+    width: 60%;
     height: 10%;
     padding: 1rem;
     border-radius: .5rem;
@@ -25,7 +25,7 @@ h1, h2 {
     font-weight: 600;
 }*/
 
-.launch, i {
+/*.launch, i {
     font-weight: 600;
     color: black;
     text-decoration: none;
@@ -34,4 +34,41 @@ h1, h2 {
 
 .launch:hover i{
     transform: translateX(.25rem);
+}*/
+
+input[type="submit"] {
+    background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,250,69,1) 100%);
+    background-repeat: no-repeat;
+    background-size: 400% 400%;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 1.2s;
+}
+
+input[type="submit"]:hover {
+    background-position: 100% 100%;
+}
+
+.result {
+    margin: 0 auto;
+    margin-top: 5rem;
+    background-color: #ebebeb;
+    max-width: 70%;
+    min-height: 50%;
+    border-radius: .5rem;
+    padding: 2rem 2rem;
+}
+
+code {
+    text-align: left;
+    margin-top: 5rem;
+    background-color: #ebebeb;
+    color: black;
+    padding: 2px 2px;
+    border-radius: 2px;
 }

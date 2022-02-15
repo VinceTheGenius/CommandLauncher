@@ -33,6 +33,7 @@ namespace CommandLauncher.Controllers
 
         public IActionResult Launcher(string text)
         {
+
             return View();
         }
 
@@ -53,7 +54,9 @@ namespace CommandLauncher.Controllers
 
             string output = proc.StandardOutput.ReadToEnd();
 
-            return RedirectToAction("Launcher", new { text = output });
+            ViewData["Text"] = output;
+
+            return View("Launcher");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
