@@ -36,7 +36,7 @@ h1, h2 {
     transform: translateX(.25rem);
 }*/
 
-input[type="submit"] {
+input[type="button"] {
     background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,250,69,1) 100%);
     background-repeat: no-repeat;
     background-size: 400% 400%;
@@ -50,7 +50,7 @@ input[type="submit"] {
     transition: 1.2s;
 }
 
-input[type="submit"]:hover {
+input[type="button"]:hover {
     background-position: 100% 100%;
 }
 
@@ -58,7 +58,8 @@ input[type="submit"]:hover {
     margin: 0 auto;
     margin-top: 5rem;
     background-color: #ebebeb;
-    max-width: 70%;
+    width: 70%;
+    height: 70%;
     min-height: 50%;
     border-radius: .5rem;
     padding: 2rem 2rem;

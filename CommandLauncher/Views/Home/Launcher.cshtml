@@ -18,14 +18,19 @@
         <input type="text" placeholder="Write your command here..." id="Command" cols="0" rows="10" class="input" name="Command" />
         <br />
         @*<a asp-action="Launch" class="launch">Launch <i class='bx bx-chevron-right'></i></a>*@
-        <input type="submit" value="Launch" />
+        <input type="button" id="btnLaunch" value="Launch" />
     </form>
 
-    <div class="result">
-        <code>@ViewData["Text"]</code>
-    </div>
+    <textarea id="taResult" rows="15" cols="40" class="result">
+        @ViewData["Text"]
+    </textarea>
 
-    
+
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </body>
 </html>
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
