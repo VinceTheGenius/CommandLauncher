@@ -1,0 +1,37 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: "Poppins";
+    background-color: white;
+    text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+    color: black;
+}
+
+.input {
+    width: 50%;
+    height: 10%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1.5px solid black;
+    outline: none;
+    margin-bottom: 2rem;
+}
+
+/*.launch {
+    font-weight: 600;
+}*/
+
+.launch, i {
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.launch:hover i{
+    transform: translateX(.25rem);
+}
