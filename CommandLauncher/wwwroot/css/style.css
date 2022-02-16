@@ -69,6 +69,7 @@ input[type="button"] {
     }
 
 .result {
+    box-shadow: 2px 2px 8px #999;
     font-family: 'Space Mono';
     margin: 0 auto;
     margin-top: 5rem;
