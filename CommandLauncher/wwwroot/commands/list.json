@@ -1,0 +1,15 @@
+[
+  {
+    "commandName": "ipconfig",
+    "commandFile": "ipconfig"
+  },
+  {
+    "commandName": "systeminfo",
+    "commandFile": "systeminfo"
+  },
+  {
+    "commandName": "ping",
+    "commandFile": "ping",
+    "commandArgs": "www.google.fr"
+  }
+]

@@ -2,6 +2,11 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommandLauncher.Models;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace CommandLauncher.Controllers
 {
@@ -33,20 +38,27 @@ namespace CommandLauncher.Controllers
 
         public IActionResult Launcher()
         {
+            var commandList = GetCommandList();
 
-            return View();
+            List<SelectListItem> Commands = commandList
+                .Select(command => new SelectListItem
+                {
+                    Value = commandList.IndexOf(command).ToString() ,
+                    Text = command.CommandName
+                }).ToList();
+
+            return View(Commands);
         }
 
-        public async Task<IActionResult> Launch(string Command)
+        public /*async Task<*/IActionResult/*>*/ Launch(int Command)
         {
-            var fileName = "C:/VincentTheGenius/afficher2.txt";
+            List<Command> CommandList = GetCommandList();
 
-            await System.IO.File.WriteAllTextAsync(fileName, Command);
-
-            System.Diagnostics.Process proc = new System.Diagnostics.Process(); //Declare le nouveau process
+            Process proc = new Process(); //Declare le nouveau process
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.FileName = Command;
+            proc.StartInfo.FileName = CommandList[Command].CommandFile;
+            proc.StartInfo.Arguments = CommandList[Command].CommandArgs;
             //proc.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             //proc.StartInfo.CreateNoWindow = true;
             proc.Start();
@@ -57,10 +69,27 @@ namespace CommandLauncher.Controllers
             return Json(new { output });
         }
 
+        private static List<Command> GetCommandList()
+        {
+            var fileContent = "wwwroot/commands/list.json";
+
+            var jsonContent = System.IO.File.ReadAllText(fileContent);
+
+            List<Command> CommandList = JsonConvert.DeserializeObject<List<Command>>(jsonContent);
+            return CommandList;
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+
+    public class Command
+    {
+        public string CommandFile { get; set; }
+        public string CommandArgs { get; set; }
+        public string CommandName { get; set; }
     }
 }
