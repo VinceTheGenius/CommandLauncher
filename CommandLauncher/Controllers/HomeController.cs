@@ -36,6 +36,11 @@ namespace CommandLauncher.Controllers
             return View();
         }
 
+        public IActionResult Vue()
+        {
+            return View();
+        }
+
         public IActionResult Launcher()
         {
             var commandList = GetCommandList();

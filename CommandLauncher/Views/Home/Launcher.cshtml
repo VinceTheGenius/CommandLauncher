@@ -21,10 +21,10 @@
 
         <label>
             @*<select  class="command" name="Command">
-                <option value="" disabled selected hidden>Select a command :</option>
-                <option value="0">ipconfig</option>
-                <option value="1">systeminfo</option>
-            </select>*@
+                    <option value="" disabled selected hidden>Select a command :</option>
+                    <option value="0">ipconfig</option>
+                    <option value="1">systeminfo</option>
+                </select>*@
 
             <select id="Command" class="command" name="Command" asp-items="@(new SelectList(Model, "Value", "Text"))">
                 <option value="" disabled selected hidden>Select a command :</option>
@@ -42,16 +42,15 @@
     </form>
 
     <textarea id="taResult" rows="15" cols="40" class="result">
-        @ViewData["Text"]
     </textarea>
 
-
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-</body>
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
 
 </html>
