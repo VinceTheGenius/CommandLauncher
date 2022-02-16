@@ -15,9 +15,30 @@
 
     <h2>The easier way to launch a command</h2>
     <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Launch">
-        <input type="text" placeholder="Write your command here..." id="Command" cols="0" rows="10" class="input" name="Command" />
+        @*<input type="text" placeholder="Write your command here..." id="Command" cols="0" rows="10" class="input" name="Command" />*@
+
+        <select id="Command" name="Command">
+            <option value="0">Select a command :</option>
+            <option value="1">ipconfig.exe</option>
+            <option value="2">BMW</option>
+            <option value="3">Citroen</option>
+            <option value="4">Ford</option>
+            <option value="5">Honda</option>
+            <option value="6">Jaguar</option>
+            <option value="7">Land Rover</option>
+            <option value="8">Mercedes</option>
+            <option value="9">Mini</option>
+            <option value="10">Nissan</option>
+            <option value="11">Toyota</option>
+            <option value="12">Volvo</option>
+        </select>
+
         <br />
+
         @*<a asp-action="Launch" class="launch">Launch <i class='bx bx-chevron-right'></i></a>*@
+
+
+
         <input type="button" id="btnLaunch" value="Launch" />
     </form>
 

@@ -11,7 +11,7 @@ h1, h2 {
     color: black;
 }
 
-.input {
+/*.input {
     width: 60%;
     height: 10%;
     padding: 1rem;
@@ -19,7 +19,12 @@ h1, h2 {
     border: 1.5px solid black;
     outline: none;
     margin-bottom: 2rem;
+    transition: .2s;
 }
+
+input:focus {
+    background-color: #f7f7f7;
+}*/
 
 /*.launch {
     font-weight: 600;
@@ -57,12 +62,17 @@ input[type="button"]:hover {
 .result {
     margin: 0 auto;
     margin-top: 5rem;
-    background-color: #ebebeb;
+    background-color: #f7f7f7;
     width: 70%;
     height: 70%;
     min-height: 50%;
     border-radius: .5rem;
     padding: 2rem 2rem;
+    transition: .2s;
+}
+
+.result:focus {
+    border: 2px solid black;
 }
 
 code {
